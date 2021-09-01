@@ -6,11 +6,8 @@
 package formvalidation;
 
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
-/**
- *
- * @author b
- */
 public class UserLogin extends javax.swing.JFrame {
 
     /**
@@ -49,6 +46,12 @@ public class UserLogin extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        tfUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfUsernameActionPerformed(evt);
+            }
+        });
 
         btnLogin.setText("Sign Up");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -117,7 +120,7 @@ public class UserLogin extends javax.swing.JFrame {
                                 .addComponent(chkJava)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(chkSwift)))))
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(437, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,7 +164,6 @@ public class UserLogin extends javax.swing.JFrame {
 
         if(validated()){
            String submittedData = "";
-           
            submittedData += "User Name : " + tfUsername.getText() + "\n";
            submittedData += "Password : " + tfPassword.getText() + "\n";
            submittedData += "Email : " + tfEmail.getText() + "\n";
@@ -183,6 +185,12 @@ public class UserLogin extends javax.swing.JFrame {
        }
          
     }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void tfUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfUsernameActionPerformed
+    
+   
+                
+    }//GEN-LAST:event_tfUsernameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -275,10 +283,7 @@ public class UserLogin extends javax.swing.JFrame {
            msg += " Please select Course \n";
        }
         
-        
-        
-        
-        
+         
         
         if(!isValid){
             JOptionPane.showMessageDialog(rootPane, msg);
